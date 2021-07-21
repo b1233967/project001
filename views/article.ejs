@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <link rel="stylesheet" href="/ckeditor_ori_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <%- include("./partials/header") %>
+    <link rel="stylesheet" href="/style.css" />
+    <title>Article page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="article-wrap">
+      <div class="container">
+        <!-- <div class="breadcrumbs">
+          <a href="/gotravel "> GoTravel</a> >
+          <a href="/gotravel/<article.area %> "
+            ><article.area.toUpperCase() %></a
+          >
+        </div> -->
+
+        <h1><%= article.title %></h1>
+        <div class="info-box">
+          <small>Redturtle - <%= article.area.toUpperCase() %> </small>
+          <% if(typeof(alreadyLike)=="undefined" || alreadyLike==false){ %> 
+            <div
+            class="likes"
+            data-id="<%= article._id %>"
+            data-likes="<%= article.likes %> "
+            >
+          <% }else{ %> 
+            <div
+            class="likes red"
+            data-id="<%= article._id %>"
+            data-likes="<%= article.likes %> "
+            >
+          <% } %> 
+            <i class="fas fa-heart"></i>
+            <span><%= article.likes %></span>
+          </div>
+        </div>
+        <div class="ck-content"><%- article.content %></div>
+      </div>
+    </div>
+  </body>
+  <script src="/script.js"></script>
+</html>

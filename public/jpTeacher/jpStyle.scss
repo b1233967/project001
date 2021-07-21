@@ -1,0 +1,179 @@
+$color-blue: #84d2f6;
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+.btn {
+  width: 100px;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  border: none;
+  background-color: $color-blue;
+  border-radius: 10px;
+  text-align: center;
+  color: #222;
+  box-shadow: 3px 3px 6px #777;
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+
+textarea {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90vw;
+}
+
+header {
+  background-color: $color-blue;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.container {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  form {
+    max-width: 600px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  .translate_box {
+    // max-width: 600px;
+    padding: 10px;
+    flex: 1 1 470px;
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #666;
+    div {
+      width: 100%;
+      ruby,
+      span {
+        margin: 0 0.5rem;
+        // padding: 1rem 0rem;
+        line-height: 300%;
+        border-bottom: solid 2px green;
+        font-size: 1.3rem;
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+          background-color: #ff0;
+        }
+      }
+      ruby.active,
+      span.active {
+        background-color: #ff0;
+      }
+    }
+  }
+  .word_box {
+    margin: 0 10px;
+    width: 250px;
+    background-color: $color-blue;
+    color: #333;
+    position: sticky;
+    top: 0;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #666;
+    h3 {
+      text-align: center;
+    }
+    .detail {
+      width: 100%;
+      .item {
+        margin: 5px 0;
+      }
+      .properties {
+        display: flex;
+        flex-wrap: wrap;
+        .property {
+          max-width: 120px;
+          padding: 5px 8px;
+          background-color: #0a0;
+          border-radius: 10px;
+          text-align: center;
+          color: #fff;
+        }
+      }
+      .properties .property + .property {
+        margin-left: 10px;
+      }
+      a {
+        color: #fff;
+        font-size: 20px;
+      }
+      .dict {
+        padding: 5px 8px;
+        background-color: purple;
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .result {
+    .word_box {
+      margin: 0 auto 10px;
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+  .result {
+    .word_box {
+      .detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// test
+
+.bg_yellow {
+  background-color: #ff0;
+}

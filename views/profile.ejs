@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <%- include("./partials/header") %>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Register Page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <main>
+      <div class="profile">
+        <img src="<%= user.thumbnail %> " alt="User照片" />
+        <div class="account"><%= user.username %></div>
+        <div class="intro"><%= user.intro %></div>
+      </div>
+
+      <div class="detail">
+        <div class="favorite">
+          <h1><%= area.toUpperCase() %></h1>
+          <div class="article-items">
+            <% articleList.forEach(article=>{ %>
+            <div class="item">
+              <a href="/article/<%= article._id %> ">
+                <div class="img-wrap">
+                  <img
+                    src="<%= article.mainPic %> "
+                    alt="<%= article.title %> "
+                  />
+                  <div class="overview"><%= article.intro %></div>
+                </div>
+              </a>
+              <div class="intro">
+                <div class="title"><%= article.title %></div>
+                <% if(typeof(userLoveArticles)=="undefined" || userLoveArticles.indexOf(article._id)==-1){ %> 
+                  <div
+                  class="likes"
+                  data-id="<%= article._id %>"
+                  data-likes="<%= article.likes %> "
+                  >
+                <% }else{ %> 
+                  <div
+                  class="likes red"
+                  data-id="<%= article._id %>"
+                  data-likes="<%= article.likes %> "
+                >
+                <% } %> 
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+
+      
+      <!-- <div class="detail">
+        <div class="favorite">
+          <h1>已收錄文章</h1>
+          <div class="article-items">
+            <div class="item">
+              <a href="">
+                <img
+                  src="../pic/TravelPage/Catagory_kanto_background.jpg"
+                  alt=""
+              /></a>
+              <div class="intro">
+                <div class="title">東京 強烈的努力</div>
+                <div class="likes"><i class="fas fa-heart"></i>100</div>
+              </div>
+            </div>
+            <div class="item">
+              <a href="">
+                <img src="../pic/TravelPage/Travel_top_Honmyouji.jpg" alt="" />
+              </a>
+              <div class="intro">
+                <div class="title">東京 強烈的努力</div>
+                <div class="likes"><i class="fas fa-heart"></i>100</div>
+              </div>
+            </div>
+            <div class="item">
+              <a href="">
+                <img src="../pic/test.jpg" alt="" />
+              </a>
+              <div class="intro">
+                <div class="title">東京 強烈的努力</div>
+                <div class="likes"><i class="fas fa-heart"></i>100</div>
+              </div>
+            </div>
+            <div class="item">
+              <a href="">
+                <img
+                  src="../pic/TravelPage/Catagory_kanto_background.jpg"
+                  alt=""
+                />
+              </a>
+              <div class="intro">
+                <div class="title">東京 強烈的努力</div>
+                <div class="likes"><i class="fas fa-heart"></i>100</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </main>
+  </body>
+  <script src="/script.js"></script>
+</html>

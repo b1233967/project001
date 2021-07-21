@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <%- include("./partials/header") %>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="onepage-wrap">
+      <div class="form-wrap">
+        <a class="google_login" href="/auth/google">
+          <img src="../pic/Google__G__Logo.svg" alt="Google Logo" />
+          <h2>Google登入</h2>
+        </a>
+        <h2 class="or">or</h2>
+        <form action="/auth/login" method="POST">
+          <div class="form-group">
+            <label for="email"><i class="far fa-envelope"></i></label>
+            <input
+              type="email"
+              id="email"
+              name="username"
+              placeholder="信箱"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password"><i class="fas fa-lock"></i></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="密碼"
+              required
+            />
+          </div>
+          <%- include("./partials/message") %>
+          <button class="btn" type="submit">登入</button>
+        </form>
+        <div class="register-group">
+          <a href="#">忘記密碼</a>
+          <span>沒有帳號？<a href="/auth/register">註冊</a></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

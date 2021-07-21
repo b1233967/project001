@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <%- include("./partials/header") %>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Register Page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="onepage-wrap">
+      <div class="form-wrap">
+        <a class="google_login" href="">
+          <img src="../pic/Google__G__Logo.svg" alt="Google Logo" />
+          <h2>Google註冊</h2>
+        </a>
+        <h2 class="or">or</h2>
+        <form action="/auth/register" method="POST">
+          <div class="form-group">
+            <label for="username"><i class="fas fa-user-circle"></i></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              minlength="2"
+              maxlength="10"
+              placeholder="ID/暱稱 (2~10字)"
+              value="<%= old_username %>"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="far fa-envelope"></i></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="信箱"
+              value="<%= old_email %>"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password"><i class="fas fa-lock"></i></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              minlength="6"
+              placeholder="密碼 (最少六碼)"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="pwCheck"><i class="fas fa-lock"></i></label>
+            <input
+              type="password"
+              id="pwCheck"
+              name="pwCheck"
+              minlength="6"
+              placeholder="密碼確認"
+              required
+            />
+          </div>
+          <%- include("./partials/message") %>
+          <button class="btn" type="submit">註冊</button>
+        </form>
+        <div class="register-group">
+          <span>已有帳號？<a href="/auth/login">登入</a></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

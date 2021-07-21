@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <%- include("./partials/header") %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/build/ckeditor.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <title>Article Edit page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="container inside">
+      <form
+        id="articleEdit"
+        class="articleEdit"
+        action="/article/edit"
+        name="richText"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="input-wrap">
+          <div class="left-form">
+            <div class="input-group">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="標題"
+                maxlength="15"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <select name="area" id="area">
+                <option value="chiba">千葉</option>
+                <option value="gunma">群馬</option>
+                <option value="ibaraki">茨城</option>
+                <option value="kanagawa">神奈川</option>
+                <option value="saitama">琦玉</option>
+                <option value="tochigi">栃木</option>
+                <option value="tokyo">東京</option>
+
+                <option value="hyougo">兵庫</option>
+                <option value="kyoto">京都</option>
+                <option value="mie">三重</option>
+                <option value="nara">奈良</option>
+                <option value="osaka">大阪</option>
+                <option value="shiga">滋賀</option>
+                <option value="wakayama">和歌山</option>
+
+                <option value="akita">秋田</option>
+                <option value="aomori">青森</option>
+                <option value="hukushima">福島</option>
+                <option value="iwate">岩手</option>
+                <option value="miyagi">宮城</option>
+                <option value="yamagata">山形</option>
+
+                <option value="okinawa">沖繩</option>
+
+                <option value="ehime">愛媛</option>
+                <option value="kagawa">香川</option>
+                <option value="kouchi">高知</option>
+                <option value="tokushima">德島</option>
+
+                <option value="hokkaido">北海道</option>
+
+                <option value="aichi">愛知</option>
+                <option value="hukui">福井</option>
+                <option value="gihu">岐阜</option>
+                <option value="ishikawa">石川</option>
+                <option value="nagano">長野</option>
+                <option value="niigata">新潟</option>
+                <option value="shizuoka">靜岡</option>
+                <option value="toyama">富山</option>
+                <option value="yamanashi">山梨</option>
+
+                <option value="hiroshima">廣島</option>
+                <option value="okayama">岡山</option>
+                <option value="shimane">島根</option>
+                <option value="totori">鳥取</option>
+                <option value="yamakuchi">山口</option>
+
+                <option value="hukuoka">福岡</option>
+                <option value="kagoshima">鹿兒島</option>
+                <option value="kumamoto">熊本</option>
+                <option value="miyazaki">宮崎</option>
+                <option value="nagasaki">長崎</option>
+                <option value="ooita">大分</option>
+                <option value="saga">佐賀</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <textarea
+                type="text"
+                id="intro"
+                name="intro"
+                style="resize: none"
+                placeholder="簡介,最多70字"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="right-form">
+            <div class="input-group uploadImg">
+              <label for="mainPic"
+                ><img
+                  id="showImg"
+                  class="showImg drag-upload"
+                  src="https://i.imgur.com/K4TtJxW.jpg"
+                  alt="文章縮圖"
+              /></label>
+              <input
+                type="file"
+                id="mainPic"
+                name="mainPic"
+                style="display: none"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <textarea name="content" id="editor" placeholder="Hello~"></textarea>
+        <button id="save" class="save btn">儲存</button>
+        <button type="submit" class="submit btn">發表</button>
+      </form>
+    </div>
+  </body>
+  <script src="/articleEditor/EditorScript.js"></script>
+  <script src="/script.js"></script>
+</html>

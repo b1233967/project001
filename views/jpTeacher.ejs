@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Tay" />
+    <meta name="description" content="" />
+    <link href="#" rel="shortcut icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../jpTeacher/jpStyle.css" />
+    <title>日語背後靈</title>
+  </head>
+  <body>
+    <header>
+      <h1>日語背後靈</h1>
+    </header>
+
+    <div class="container">
+      <% if(!result){ %>
+      <form action="/jpteacher" method="POST">
+        <textarea
+          name="article"
+          id="article"
+          cols="30"
+          rows="10"
+          placeholder="請輸入文章"
+        ></textarea>
+        <button class="btn" type="submit">開始</button>
+      </form>
+      <% }else{ %>
+      <div class="result">
+        <div class="translate_box">
+          <div>
+            <% for(let i=0 ; i<result.length ; i++) {%>
+            <!-- 我是縮排線 -->
+            <% let word = result[i] %> 
+            <% if(word.pronunciation && word.pronunciation!=' ' &&
+            word.pos!='記号' &&
+            kataToHira(word.pronunciation)!=word.surface_form){ %>
+            <ruby id="<%= 'word_'+ i %>" class="word"> 
+              <rb><%= word.surface_form %></rb>
+              <rp>(</rp
+              ><rt><%= kataToHira(word.pronunciation) %></rt><rp>)</rp>
+            </ruby>
+            <% } else if(word.word_id==10) {%>
+          </div>
+          <div>
+            <%} else{%>
+            <span id="<%= 'word_'+ i %>" class="word"><%= word.surface_form %></span>
+            <% } %>
+            <!-- 下面是for的括號 -->
+            <% } %>
+          </div>
+        </div>
+        <div class="word_box">
+          <h3>單字框</h3>
+        </div>
+      </div>
+      <a href="/jpteacher" class="btn">Clear</a>
+      <% } %>
+    </div>
+  </body>
+  <script src="../jpTeacher/jpScript.js"></script>
+</html>

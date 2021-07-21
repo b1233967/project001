@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <%- include("./partials/header") %>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>IGO Travel</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="banner">
+      <!-- banner是橫向滿版 -->
+      <div class="text">
+        <div class="content">
+          <h1>Let's go travel！</h1>
+          <p>百聞不如一見</p>
+          <p>老師說的、書上看的圍棋故事</p>
+          <p>就讓龜粿帶你見證吧！</p>
+        </div>
+      </div>
+      <div class="photo_carousel">
+        <img
+          src="./pic/TravelPage/Travel_top_HoninpoStart.jpg"
+          alt="本因坊起源地"
+        />
+        <img src="./pic/TravelPage/Travel_top_Honmyouji.jpg" alt="巢鴨本妙寺" />
+        <img
+          src="./pic/TravelPage/Travel_top_IgoOldBookStore.jpg"
+          alt="Akasiya圍棋古書店"
+        />
+        <img
+          src="./pic/TravelPage/Travel_top_yusimaGoCafe.jpg"
+          alt="湯島圍棋咖啡"
+        />
+      </div>
+    </div>
+    <div class="container" id="area-cata">
+      <h1>今天...</h1>
+      <h1>我想來點不一樣的旅行</h1>
+      <div class="catagory" id="catagory"></div>
+    </div>
+    <footer>
+      <h3>copyright © 2021 Redturtle</h3>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/travel_script.js"></script>
+  </body>
+</html>
