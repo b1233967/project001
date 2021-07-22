@@ -14,7 +14,6 @@ require("./config/passport")
 const multer = require("multer")
 const multiparty = require("connect-multiparty")
 const MultipartyMiddleware = multiparty({ uploadDir: "./tempIMG" })
-const axios = require("axios")
 const formData = require("form-data")
 const imgur = require("imgur")
 const Port = "3000"
