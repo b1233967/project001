@@ -67,6 +67,7 @@ passport.use(
             email: profile.emails[0].value,
             googleID: profile.id,
             thumbnail: profile.photos[0].value,
+            active: true,
           })
             .save()
             .then((newUser) => {

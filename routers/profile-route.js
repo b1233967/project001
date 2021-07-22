@@ -31,33 +31,6 @@ router.get("/", authCheck, async (req, res) => {
     user: req.user,
     userLoveArticles,
   })
-
-  // if (req.isAuthenticated()) {
-  //   let userId = req.user._id
-  //   let curUser = await User.findById(userId)
-  //   let userLoveArticles = curUser.loveArticle
-  //   let articleList = await Article.find(
-  //     { _id: { $in: userLoveArticles } },
-  //     (err, data) => {
-  //       if (err) console.log(err)
-  //       if (data) console.log("Success")
-  //     }
-  //   )
-  //   res.render("profile", {
-  //     area: "My favorite",
-  //     articleList,
-  //     user: req.user,
-  //     userLoveArticles,
-  //   })
-  // } else {
-  //   res.render("profile", {
-  //     area: "My favorite",
-  //     articleList,
-  //     user: req.user,
-  //   })
-  // }
-
-  // res.render("profile", { user: req.user })
 })
 
 module.exports = router

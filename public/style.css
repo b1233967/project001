@@ -8,8 +8,6 @@
 }
 
 .message-box {
-  margin-top: -10px;
-  margin-bottom: 10px;
   padding: 3px 10px;
   border-radius: 5px;
   text-align: center;
@@ -625,7 +623,7 @@ nav.active .container ul li a::after {
   vertical-align: middle;
 }
 
-.onepage-wrap .form-wrap .or {
+.onepage-wrap .form-wrap .commend {
   color: #fff;
 }
 
@@ -637,7 +635,7 @@ nav.active .container ul li a::after {
       -ms-flex-align: center;
           align-items: center;
   width: 280px;
-  margin: 10px auto 20px;
+  margin: 20px auto 10px;
   background-color: #fff;
   border-radius: 5px;
   font-size: 24px;
@@ -665,6 +663,7 @@ nav.active .container ul li a::after {
 }
 
 .onepage-wrap .form-wrap form .btn {
+  margin-top: 10px;
   border: none;
   border-radius: 5px;
   background-color: #ffda77;

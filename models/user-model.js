@@ -1,6 +1,19 @@
 const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema({
+  active: {
+    // 是否啟用，點完連結即啟用
+    type: Boolean,
+    default: false,
+  },
+  activeCode: {
+    // 啟用碼，會跟在router後面做驗證
+    type: String,
+  },
+  activeTimeLimit: {
+    type: Date,
+  },
+
   // Common data
   username: {
     type: String,

@@ -3,6 +3,7 @@ window.addEventListener("scroll", check)
 function check() {
   checkNav()
 }
+
 function checkNav() {
   if (window.scrollY > 100) {
     Nav.classList.add("active")

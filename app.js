@@ -7,7 +7,6 @@ const passport = require("passport")
 const path = require("path")
 const fs = require("fs")
 const mongoose = require("mongoose")
-// const cookieSession = require("cookie-session")
 const session = require("express-session")
 const flash = require("connect-flash")
 require("./config/passport")
@@ -16,6 +15,7 @@ const multiparty = require("connect-multiparty")
 const MultipartyMiddleware = multiparty({ uploadDir: "./tempIMG" })
 const formData = require("form-data")
 const imgur = require("imgur")
+const nodemailer = require("nodemailer")
 const Port = "3000"
 
 // routers
@@ -48,6 +48,7 @@ app.use((req, res, next) => {
   res.locals.error = req.flash("error")
   res.locals.old_username = req.flash("old_username")
   res.locals.old_email = req.flash("old_email")
+  res.locals.notActive_msg = req.flash("notActive_msg")
   next()
 })
 const setOriUrl = (req, res, next) => {

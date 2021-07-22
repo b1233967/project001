@@ -13,8 +13,6 @@ $dark-blue-color: #3e77f3;
 
 //共用區塊 Start
 .message-box {
-  margin-top: -10px;
-  margin-bottom: 10px;
   padding: 3px 10px;
   border-radius: 5px;
   text-align: center;
@@ -456,7 +454,7 @@ nav.active {
         vertical-align: middle;
       }
     }
-    .or {
+    .commend {
       color: #fff;
     }
     form {
@@ -464,7 +462,7 @@ nav.active {
         display: flex;
         align-items: center;
         width: 280px;
-        margin: 10px auto 20px;
+        margin: 20px auto 10px;
         background-color: #fff;
         border-radius: 5px;
         font-size: 24px;
@@ -488,6 +486,7 @@ nav.active {
         }
       }
       .btn {
+        margin-top: 10px;
         border: none;
         border-radius: 5px;
         background-color: $primary-color;

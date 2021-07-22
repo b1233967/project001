@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <%- include("./partials/header") %>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="onepage-wrap">
+      <div class="form-wrap">
+        <h2 class="commend">歡迎來到Go Community</h2>
+        <% if(notActive_msg!=""){ %>
+        <h2 class="commend"><%= notActive_msg %></h2>
+        <% } %>
+        <h2 class="commend">已寄送驗證連結到您的信箱</h2>
+        <h2 class="commend">驗證後即可登入</h2>
+        <!-- <form action="/auth/resend/" method="get">
+          <button class="btn" type="submit" id="verifyMail">
+            重新發送驗證信
+          </button>
+        </form> -->
+      </div>
+    </div>
+  </body>
+</html>
