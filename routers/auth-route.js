@@ -146,8 +146,6 @@ router.get("/:userID/:activeCode", async (req, res) => {
       if (data) console.log(data)
     }
   )
-  console.log(curUser)
-  console.log("I am checking")
   if (curUser) {
     req.flash("success_msg", "註冊成功 歡迎登入")
     res.redirect("/auth/login")

@@ -92,6 +92,10 @@ app.get("/about", setOriUrl, (req, res) => {
   res.render("about", { user: req.user })
 })
 
+app.get("/*", (req, res) => {
+  res.redirect("/")
+})
+
 app.listen(Port, () => {
   console.log(`Server is running on port ${Port} .`)
 })

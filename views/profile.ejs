@@ -7,7 +7,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="/style.css" />
-    <title>Register Page</title>
+    <title><%= user.username %>的收藏</title>
   </head>
   <body>
     <%- include("./partials/nav") %>
@@ -22,6 +22,10 @@
         <div class="favorite">
           <h1><%= area.toUpperCase() %></h1>
           <div class="article-items">
+            <% if(articleList.length==0){ %> 
+              <h2 style="width: 100%; margin-top: 30px; text-align: center;">雖然現在空空如也...</h2>
+              <h2 style="width: 100%; text-align: center;">但收藏後的文章會出現在這裡呦 ^.< </h2>
+            <% } %> 
             <% articleList.forEach(article=>{ %>
             <div class="item">
               <a href="/article/<%= article._id %> ">

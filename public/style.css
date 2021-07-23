@@ -275,7 +275,10 @@ nav.active .container ul li a::after {
   background-color: #ffda77;
   border: solid 3px #ffda77;
   color: #333;
+  font-weight: 500;
   cursor: pointer;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
 }
 
 .wrap .left .text .btn:active,
@@ -496,6 +499,7 @@ nav.active .container ul li a::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  letter-spacing: 1px;
 }
 
 .container .catagory .item .intro p {
@@ -703,8 +707,41 @@ nav.active .container ul li a::after {
   color: #8fcadf;
 }
 
+.clear-box {
+  clear: both;
+}
+
+.container .background-img {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 90px;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .background-img img {
+  height: 50vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  opacity: 0.07;
+}
+
 .container .history {
   padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .container .history .intro-box {
@@ -714,10 +751,16 @@ nav.active .container ul li a::after {
   margin: 0 auto;
 }
 
+.container .history .intro-box p {
+  margin-top: 10px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-indent: 2em;
+}
+
 .container .history .timeline {
   margin: 50px 0;
   position: relative;
-  clear: both;
 }
 
 .container .history .timeline li {
@@ -1095,7 +1138,7 @@ main .detail .favorite .article-items .item .intro .likes.red {
      object-position: center center;
   float: right;
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: solid 5px #fff;
   border-radius: 10px;
   -webkit-box-shadow: 0px 5px 10px #555;
@@ -1104,9 +1147,16 @@ main .detail .favorite .article-items .item .intro .likes.red {
 
 .full-page .container .text p {
   font-size: 20px;
+  letter-spacing: 2px;
+  text-indent: 2em;
 }
 
-.full-page .container .connect-box {
+.full-page .container .text a {
+  text-decoration: none;
+  color: #225ad4;
+}
+
+.full-page .container .connact-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1117,7 +1167,7 @@ main .detail .favorite .article-items .item .intro .likes.red {
           align-items: center;
 }
 
-.full-page .container .connect-box a {
+.full-page .container .connact-box a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1130,7 +1180,7 @@ main .detail .favorite .article-items .item .intro .likes.red {
   letter-spacing: 1px;
 }
 
-.full-page .container .connect-box img {
+.full-page .container .connact-box img {
   width: 50px;
   margin-right: 10px;
 }
@@ -1231,7 +1281,7 @@ main .detail .favorite .article-items .item .intro .likes.red {
 }
 
 .container.inside .articleEdit .input-wrap .right-form .uploadImg .showImg.drag-over {
-  border-color: #3e77f3;
+  border-color: #225ad4;
 }
 
 .container.inside .articleEdit .input-wrap .input-group {
@@ -1267,7 +1317,7 @@ main .detail .favorite .article-items .item .intro .likes.red {
 }
 
 .container.inside .articleEdit .submit {
-  background-color: #3e77f3;
+  background-color: #225ad4;
   color: #fff;
 }
 
@@ -1314,7 +1364,7 @@ main .detail .favorite .article-items .item .intro .likes.red {
 
 .article-wrap .container .breadcrumbs a {
   text-decoration: none;
-  color: #3e77f3;
+  color: #225ad4;
 }
 
 .article-wrap .container .info-box {
@@ -1418,6 +1468,9 @@ main .detail .favorite .article-items .item .intro .likes.red {
   }
   .container .catagory .item .cata_title h2 {
     font-size: 32px;
+  }
+  .container .history {
+    padding-bottom: 0;
   }
   .container .history .timeline {
     margin-top: 10px;
@@ -1609,10 +1662,21 @@ main .detail .favorite .article-items .item .intro .likes.red {
     font-size: 24px;
     padding: 0.3rem 0.5rem;
   }
+  #area-cata .catagory .item .intro {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   .container {
     width: 100%;
     max-width: 100%;
     padding: 0 5px;
+  }
+  .container .history {
+    padding-top: 50px;
+  }
+  .container .history .intro-box {
+    padding-top: 0;
   }
   .container .history .timeline li {
     padding: 10px;
