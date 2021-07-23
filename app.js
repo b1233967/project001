@@ -16,7 +16,7 @@ const MultipartyMiddleware = multiparty({ uploadDir: "./tempIMG" })
 const formData = require("form-data")
 const imgur = require("imgur")
 const nodemailer = require("nodemailer")
-const Port = "3000"
+const Port = "80"
 
 // routers
 const authRoute = require("./routers/auth-route")

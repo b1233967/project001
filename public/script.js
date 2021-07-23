@@ -13,10 +13,10 @@ function checkNav() {
 }
 
 // 收藏數 Likes (Start)
-const computeLikesApi = "http://localhost:3000/api/computelikes" // 後面加 articleID
-const checkLoggedinApi = "http://localhost:3000/api/isLoggedin"
-const addLikesDbApi = "http://localhost:3000/api/addLikesToUser/" // 後面加 articleID
-const rmLikesDbApi = "http://localhost:3000/api/rmLikesFromUser/" // 後面加 articleID
+const computeLikesApi = "http://localhost:80/api/computelikes" // 後面加 articleID
+const checkLoggedinApi = "http://localhost:80/api/isLoggedin"
+const addLikesDbApi = "http://localhost:80/api/addLikesToUser/" // 後面加 articleID
+const rmLikesDbApi = "http://localhost:80/api/rmLikesFromUser/" // 後面加 articleID
 const articleLikes = document.querySelectorAll(".article-items .item .likes") // 地區分類文章列表的愛心框
 
 // 地區分類文章列表按讚收藏

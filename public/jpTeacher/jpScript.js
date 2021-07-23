@@ -1,6 +1,6 @@
 const words = document.querySelectorAll(".word")
 const wordBox = document.querySelector(".word_box")
-const wordApiUrl = "http://localhost:3000/jpteacher/getWord/"
+const wordApiUrl = "http://localhost:80/jpteacher/getWord/"
 
 let lastWord = words[0]
 
