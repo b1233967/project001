@@ -2,7 +2,8 @@ const passport = require("passport")
 const GoogleStrategy = require("passport-google-oauth20")
 const User = require("../models/user-model")
 const localStrategy = require("passport-local")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
+// const bcrypt = require("bcrypt")
 // passport的三大賞賜
 // 1. req.user => user資訊/資料
 // 2. req.logOut() => 將使用者登出

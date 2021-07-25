@@ -2,7 +2,8 @@
 
 const router = require("express").Router()
 const passport = require("passport")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
+// const bcrypt = require("bcrypt")
 const User = require("../models/user-model")
 const nodemailer = require("nodemailer")
 const webAddress = "http://localhost:3000/"
