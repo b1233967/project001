@@ -39,8 +39,9 @@ $dark-blue-color: #225ad4;
 }
 //共用區塊 End
 
+html,
 body {
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
   background-color: #f6f6f6;
   min-height: 100vh;
@@ -61,8 +62,9 @@ footer {
 nav {
   position: fixed;
   left: 0;
+  // right: 0;
   top: 0;
-  right: 0;
+  width: 100vw;
   background-color: $primary-color;
   padding: 1rem 0;
   z-index: 999;
