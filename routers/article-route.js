@@ -49,22 +49,24 @@ router.get("/", setOriUrl, async (req, res) => {
   }
 })
 
-router.get("/edit", authCheck, (req, res) => {
-  let writable = req.user.write
-  if (writable) {
-    res.render("article_edit")
-  } else if (req.user) {
-    res.redirect("/profile")
-  } else {
-    res.redirect("/auth/login")
-  }
+router.get("/edit", (req, res) => {
+  res.render("article_edit")
+  // let writable = req.user.write
+  // if (writable) {
+  //   res.render("article_edit")
+  // } else if (req.user) {
+  //   res.redirect("/profile")
+  // } else {
+  //   res.redirect("/auth/login")
+  // }
 })
 
 router.post("/edit", MultipartyMiddleware, async (req, res) => {
+  console.log("post")
   const filePath = req.files.mainPic.path
   const imgurLink = await getImgurLink(filePath) // 縮圖的imgur網址
   let { title, area, intro, content } = req.body
-  // console.log(req.body)
+  console.log(req.body)
   let newArticle = new Article({
     title,
     mainPic: imgurLink,

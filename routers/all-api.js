@@ -12,6 +12,7 @@ router.get("/hello", (req, res) => {
 
 // 收藏數計算
 router.get("/computelikes/:id/:num", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   let { id, num } = req.params
   let articleID = id
   let articleLikesNum = num
@@ -33,16 +34,20 @@ router.get("/computelikes/:id/:num", async (req, res) => {
 
 // 確認登入狀態
 router.post("/isLoggedin", (req, res) => {
-  // console.log("req.isAuthen = " + req.isAuthenticated())
+  console.log(req.user)
+  res.header("Access-Control-Allow-Origin", "*")
   if (req.isAuthenticated()) {
+    console.log("Login")
     return res.json({ isLoggedin: true })
   } else {
+    console.log("not login")
     return res.json({ isLoggedin: false })
   }
 })
 
 // 加入收藏
 router.post("/addLikesToUser/:articleID", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   let { articleID } = req.params
   let userid = req.user._id
   // console.log("I am in addLikesToUser now .")
@@ -55,6 +60,7 @@ router.post("/addLikesToUser/:articleID", async (req, res) => {
 })
 // 移除收藏
 router.post("/rmLikesFromUser/:articleID", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   let { articleID } = req.params
   let userid = req.user._id
   let current_user = await User.findOne({ _id: userid })

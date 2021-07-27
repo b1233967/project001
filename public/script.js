@@ -68,16 +68,17 @@ if (insideLikeEl) {
       console.log(insideLikeEl)
       if (insideLikeEl.classList.contains("red")) {
         insideLikes++
+        insideLikeEl.setAttribute("data-likes", insideLikes)
         insideLikeNum.innerText = insideLikes
         await fetch(addLikesDbApi + articleID, { method: "POST" })
         await computeLikes(articleID, insideLikes)
       } else {
         insideLikes--
+        insideLikeEl.setAttribute("data-likes", insideLikes)
         insideLikeNum.innerText = insideLikes
         await fetch(rmLikesDbApi + articleID, { method: "POST" })
         await computeLikes(articleID, insideLikes)
       }
-      insideLikeEl.setAttribute("data-likes", insideLikes)
     } else {
       window.alert("登入後才能收藏歐~")
     }

@@ -16,6 +16,7 @@ const MultipartyMiddleware = multiparty({ uploadDir: "./tempIMG" })
 const formData = require("form-data")
 const imgur = require("imgur")
 const nodemailer = require("nodemailer")
+const cors = require("cors")
 const Port = "3000"
 
 // routers
@@ -31,6 +32,7 @@ const API = require("./routers/all-api")
 app.set("view engine", "ejs")
 app.use(express.json())
 app.use(express.static("./public"))
+app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(
   session({
@@ -99,3 +101,9 @@ app.get("/*", (req, res) => {
 app.listen(Port, () => {
   console.log(`Server is running on port ${Port} .`)
 })
+
+// const apiApp = express()
+// apiApp.use("/api", API)
+// apiApp.listen("5000", (req, res) => {
+//   console.log("API Server OK .")
+// })
