@@ -68,6 +68,7 @@ passport.use(
             email: profile.emails[0].value,
             googleID: profile.id,
             thumbnail: profile.photos[0].value,
+            password: "Log in by google.",
             active: true,
           })
             .save()
