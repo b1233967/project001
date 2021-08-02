@@ -24,6 +24,10 @@ const articleSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  viewtimes: {
+    type: Number,
+    default: 0,
+  },
   content: {
     // 文章本文內容的html
     type: String,

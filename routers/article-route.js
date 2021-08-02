@@ -107,7 +107,10 @@ router.get("/:id", setOriUrl, async (req, res) => {
   if (typeof user != "undefined" && user.loveArticle.indexOf(articleID) != -1) {
     alreadyLike = true
   }
-  let article = await Article.findOne({ _id: articleID })
+  let article = await Article.findByIdAndUpdate(articleID, {
+    $inc: { viewtimes: 1 },
+  })
+
   res.render("article", { article, user, alreadyLike })
 })
 
